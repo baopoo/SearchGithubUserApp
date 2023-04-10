@@ -1,0 +1,20 @@
+<a
+  href="https://github.com/{{ owner }}/{{ repo }}/commit/{{ commit.sha }}"
+  target="_blank"
+  class="commit-item border-bottom d-flex flex-column mt-2 py-2 px-2 rounded-2"
+  data-toggle="tooltip"
+  data-placement="top"
+  title="On click to view commit detail on Github.com"
+>
+  <span><strong>STT</strong>: {{ index + 1 }}</span>
+  <span><strong>Name</strong>: {{ commit.commit.author.name }}</span>
+  <span><strong>Email</strong>: {{ commit.commit.author.email }}</span>
+  <span><strong>Commit ID</strong>: {{ commit.sha }}</span>
+  <span
+    class="commit-message"
+    data-toggle="tooltip"
+    data-placement="top"
+    title="{{ commit.commit.message }}"
+    ><strong>Commit message</strong>: {{ commit.commit.message }}</span
+  >
+</a>

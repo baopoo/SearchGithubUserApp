@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row mt-3">
+    <div
+      class="col-lg-3 d-flex flex-column gap-2 justify-content-start align-items-center"
+    >
+      <button
+        type="button"
+        class="btn btn-outline-primary w-100"
+        [routerLink]="['/']"
+      >
+        <i class="bi bi-house"></i>
+        Home
+      </button>
+      <img
+        *ngIf="isLoading; else loadingImg"
+        src="{{ imgUrl }}"
+        alt="avartar user"
+        class="image-user text-center"
+      />
+      <ng-template #loadingImg>
+        <div class="placeholder-glow">
+          <span class="placeholder image-user"></span>
+        </div>
+      </ng-template>
+      <div class="text-center fs-4">{{ userName }}</div>
+    </div>
+    <div class="col-lg-9">
+      <div class="d-flex gap-2 border-bottom border-dark">
+        <h3 class="bi bi-journal-bookmark"></h3>
+        <h3>Repositories</h3>
+      </div>
+      <div *ngIf="isLoading; else loadingTemp">
+        <ng-container *ngIf="repoUserData.length > 0; else emptyRepo">
+          <app-repository-item
+            *ngFor="
+              let repo of repoUserData
+                | paginate
+                  : {
+                      totalItems: totalData,
+                      itemsPerPage: 10,
+                      currentPage: page
+                    }
+            "
+            [repo]="repo"
+          ></app-repository-item>
+        </ng-container>
+        <ng-template #emptyRepo>
+          <span class="text-danger fst-italic"
+            >This user has not repository !</span
+          >
+        </ng-template>
+      </div>
+      <ng-template #loadingTemp>
+        <app-loading></app-loading>
+      </ng-template>
+      <div class="text-center my-3" *ngIf="repoUserData.length > 0">
+        <pagination-controls
+          (pageChange)="onChangePage($event)"
+        ></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<section class="container-area" [class.searching]="checkSearch">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="container-caption">
+          <h2>GITHUB USER SEARCH APP</h2>
+          <p>There are more than 25 million user on github</p>
+          <div class="container-search-form">
+            <form>
+              <input
+                type="text"
+                placeholder="Search github user by username"
+                [(ngModel)]="userName"
+                [ngModelOptions]="{ standalone: true }"
+              />
+              <button (click)="onClickSearch()" [disabled]="!userName">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

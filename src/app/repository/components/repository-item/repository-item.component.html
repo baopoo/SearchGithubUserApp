@@ -1,0 +1,28 @@
+<div class="border-bottom d-flex flex-column py-2">
+  <span
+    class="fs-5 fw-bold repository-name"
+    (click)="onClickSearchCommit(repo)"
+    >{{ repo.name }}</span
+  >
+  <span>{{ repo.description }}</span>
+  <div class="d-flex gap-3">
+    <div
+      class="d-flex gap-1"
+      data-toggle="tooltip"
+      data-placement="top"
+      title="Star number of this repository"
+    >
+      <i class="bi bi-star fw-bold"></i>
+      <span>{{ repo.stargazers_count | number }}</span>
+    </div>
+    <div
+      class="d-flex gap-1"
+      data-toggle="tooltip"
+      data-placement="top"
+      title="Issue number of this repository"
+    >
+      <i class="bi bi-dash-circle fw-bold"></i>
+      <span>{{ repo.open_issues_count | number }}</span>
+    </div>
+  </div>
+</div>

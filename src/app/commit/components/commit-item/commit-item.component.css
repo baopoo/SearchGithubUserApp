@@ -1,0 +1,16 @@
+.commit-message{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: baseline;
+}
+.commit-item:hover{
+    cursor: pointer;
+    background-color: rgb(175, 175, 175);
+}
+.commit-item{
+    text-decoration: none;
+    color: #000;
+}

@@ -1,0 +1,8 @@
+.repository-name{
+    color: #026986 ;
+}
+.repository-name:hover{
+    cursor: pointer;
+    color: #00305e;
+    text-decoration: underline;
+}

@@ -1,0 +1,38 @@
+<div class="container" [style.padding-top.px]="152">
+  <div class="row">
+    <ng-container *ngIf="!loading && userData; else loadingTemp">
+      <div *ngIf="userData.length > 0; else notFound">
+        <div class="col-lg-8 offset-lg-2">
+          <app-user-info
+            *ngFor="
+              let user of userData
+                | paginate
+                  : {
+                      totalItems: totalData,
+                      itemsPerPage: 10,
+                      currentPage: page
+                    }
+            "
+            [user]="user"
+            (click)="onSearchRepoUser(user)"
+          ></app-user-info>
+        </div>
+        <div class="text-center my-5">
+          <pagination-controls
+            (pageChange)="onChangePage($event)"
+          ></pagination-controls>
+        </div>
+      </div>
+      <ng-template #notFound>
+        <span
+          *ngIf="userName"
+          class="alert alert-danger col-lg-8 offset-lg-2 text-center my-5"
+          >NOT FOUND USER</span
+        >
+      </ng-template>
+    </ng-container>
+    <ng-template #loadingTemp>
+      <app-loading></app-loading>
+    </ng-template>
+  </div>
+</div>

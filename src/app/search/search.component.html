@@ -1,0 +1,13 @@
+<app-search-form
+  (onClickSearchUser)="onClickSearchUser($event)"
+  [userName]="userName"
+  [checkSearch]="!!userName"
+></app-search-form>
+<app-search-result
+  [loading]="loading"
+  [userData]="userData"
+  [userName]="userName"
+  [totalData]="totalData"
+  (changePage)="changePage($event)"
+  [page]="page"
+></app-search-result>

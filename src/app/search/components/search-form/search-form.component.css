@@ -1,0 +1,91 @@
+.container-area {
+  background-image: url("https://res.cloudinary.com/djjv3stcm/image/upload/v1680836612/image/bg-github_cbbuye.jpg");
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.container-area::after {
+  content: "";
+  clear: both;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container-caption h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.container-caption p {
+  font-size: 24px;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 500;
+}
+.container-search-form {
+  width: 100%;
+  position: relative;
+}
+
+.container-search-form input {
+  width: 100%;
+  padding: 0 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+  color: #333;
+  height: 70px;
+  border: none;
+}
+
+.container-search-form button {
+  position: absolute;
+  right: 6px;
+  height: 60px;
+  border: none;
+  color: #fff;
+  background: #026986;
+  top: 5px;
+  border-radius: 100%;
+  width: 70px;
+}
+.container-search-form button:hover {
+  background: #00305e;
+}
+.searching {
+  transition: all 1s ease;
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.searching input {
+  border: 1px solid #00305e;
+}
+.searching h2 {
+  margin-bottom: 0 !important;
+  font-size: 30px !important;
+  margin-bottom: 10px !important;
+}
+.searching::after {
+  background-color: #1d4c79 !important;
+}
+
+.searching p {
+  display: none !important;
+}

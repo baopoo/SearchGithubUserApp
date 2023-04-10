@@ -1,0 +1,20 @@
+.user-info {
+  margin-top: 10px;
+}
+.user-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.user-info:hover {
+  background-color: #99bbc5;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.user-info:hover .user-icon {
+  display: block !important;
+}
+.user-info i {
+  color: #001529;
+}
